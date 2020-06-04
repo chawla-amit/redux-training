@@ -1,10 +1,11 @@
 import React from "react";
-import withLoader from "./components/loader";
 import CharacterList from "./components/character-list";
 import Search from "./components/search";
 import CartIcon from "./components/cart-icon";
 import CartModal from "./components/cart-modal";
 import Loader from "./components/loader";
+
+import characters from "./mock";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         </div>
       </div>
 
-      <CharacterList />
+      <CharacterList characters={characters} />
       <CartModal />
       <Loader />
     </div>

@@ -1,6 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
-import { removeCartItem } from "../../redux/actions";
+import mockCartItems from "../../mock";
 
 const styles = {
   modalContainer: {
@@ -35,40 +34,24 @@ const CartItem = ({ item, removeItem }) => {
           </div>
         </div>
         <div className="col-sm-2 d-flex justify-content-center align-items-center">
-          <button
-            className="btn btn-small btn-danger rounded-circle"
-            onClick={() => removeItem(item)}
-          >
-            X
-          </button>
+          <button className="btn btn-small btn-danger rounded-circle">X</button>
         </div>
       </div>
     </div>
   );
 };
 
-const CartModal = ({ cartItems, showCart, removeItem }) => {
+const CartModal = ({ cartItems = mockCartItems, showCart = true }) => {
   return showCart && cartItems.length ? (
     <div
       className="bg-light border-dark shadow-lg p-3 mb-5 bg-white rounded"
       style={styles.modalContainer}
     >
       {cartItems.map(item => (
-        <CartItem item={item} removeItem={removeItem} />
+        <CartItem item={item} />
       ))}
     </div>
   ) : null;
 };
 
-const mapStateToProps = state => {
-  return {
-    cartItems: state.cart.items,
-    showCart: state.cart.showCart
-  };
-};
-
-const mapDispatchToProps = dispatch => ({
-  removeItem: item => dispatch(removeCartItem(item))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(CartModal);
+export default CartModal;

@@ -1,11 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
-import { toggleCart } from "../../redux/actions";
 import cartIcon from "../../cart.png";
 
-const CartIcon = ({ cartItemsCount, toggle }) => {
+const CartIcon = ({ cartItemsCount = 0 }) => {
   return (
-    <div className="position-relative" onClick={toggle}>
+    <div className="position-relative">
       <img src={cartIcon} alt="Mini Cart" width="50px" height="50px" />
       {cartItemsCount ? (
         <span
@@ -19,12 +17,4 @@ const CartIcon = ({ cartItemsCount, toggle }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  cartItemsCount: state.cart.count
-});
-
-const mapDispatchToProps = dispatch => ({
-  toggle: () => dispatch(toggleCart())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
+export default CartIcon;

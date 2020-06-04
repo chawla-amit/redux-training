@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 
 const styles = {
   loader: {
@@ -20,8 +19,4 @@ const Loader = ({ isLoading }) => {
   return isLoading ? <div style={styles.loader}>Loading...</div> : null;
 };
 
-const mapStateToProps = state => ({
-  isLoading: state.loader.show
-});
-
-export default connect(mapStateToProps)(Loader);
+export default Loader;

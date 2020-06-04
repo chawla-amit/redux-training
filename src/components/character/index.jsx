@@ -1,24 +1,6 @@
 import React from "react";
 
-/* 
- id: 1,
-    name: "Rick Sanchez",
-    status: "Alive",
-    species: "Human",
-    type: "",
-    gender: "Male",
-    origin: {
-      name: "Earth (C-137)",
-      url: "https://rickandmortyapi.com/api/location/1"
-    },
-    location: {
-      name: "Earth (Replacement Dimension)",
-      url: "https://rickandmortyapi.com/api/location/20"
-    },
-    image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-    */
-
-const CharacterCard = ({ character, addItemToCart }) => {
+const CharacterCard = ({ character }) => {
   const { name, status, species, gender, origin, location, image } = character;
   return (
     <div className="card bg-dark text-light">
@@ -60,7 +42,6 @@ const CharacterCard = ({ character, addItemToCart }) => {
             fontSize: "20px",
             fontWeight: "bold"
           }}
-          onClick={() => addItemToCart(character)}
         >
           +
         </button>

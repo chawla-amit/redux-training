@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
-import { fetchCharacters } from "../../redux/actions";
 
 const Search = ({ search }) => {
   const [value, setValue] = useState("");
@@ -23,7 +21,6 @@ const Search = ({ search }) => {
           class="btn btn-outline-secondary"
           type="button"
           id="button-addon2"
-          onClick={() => search(value)}
         >
           Search
         </button>
@@ -32,8 +29,4 @@ const Search = ({ search }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  search: searchTerm => dispatch(fetchCharacters(searchTerm))
-});
-
-export default connect(null, mapDispatchToProps)(Search);
+export default Search;
