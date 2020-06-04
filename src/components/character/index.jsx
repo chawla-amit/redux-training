@@ -18,7 +18,7 @@ import React from "react";
     image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
     */
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ character, addItemToCart }) => {
   const { name, status, species, gender, origin, location, image } = character;
   return (
     <div className="card bg-dark text-light">
@@ -60,6 +60,7 @@ const CharacterCard = ({ character }) => {
             fontSize: "20px",
             fontWeight: "bold"
           }}
+          onClick={() => addItemToCart(character)}
         >
           +
         </button>

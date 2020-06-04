@@ -1,0 +1,13 @@
+export const FETCH_CHARACTERS = "FETCH_CHARACTERS";
+
+export const SET_CHARACTERS = "SET_CHARACTERS";
+
+export const ADD_CART_ITEM = "ADD_CART_ITEM";
+
+export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
+
+export const TOGGLE_CART = "TOGGLE_CART";
+
+export const SHOW_LOADER = "SHOW_LOADER";
+
+export const HIDE_LOADER = "HIDE_LOADER";
