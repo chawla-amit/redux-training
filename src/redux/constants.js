@@ -1,0 +1,9 @@
+export const ADD_TO_CART = "ADD_TO_CART";
+
+export const REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART";
+
+export const TOGGLE_CART = "TOGGLE_CART";
+
+export const FETCH_CHARACTERS = "FETCH_CHARACTERS";
+
+export const SET_CHARACTERS = "SET_CHARACTERS";

@@ -1,5 +1,5 @@
 import React from "react";
-import mockCartItems from "../../mock";
+import { connect } from "react-redux";
 
 const styles = {
   modalContainer: {
@@ -41,7 +41,7 @@ const CartItem = ({ item, removeItem }) => {
   );
 };
 
-const CartModal = ({ cartItems = mockCartItems, showCart = true }) => {
+const CartModal = ({ cartItems = [], showCart }) => {
   return showCart && cartItems.length ? (
     <div
       className="bg-light border-dark shadow-lg p-3 mb-5 bg-white rounded"
@@ -54,4 +54,11 @@ const CartModal = ({ cartItems = mockCartItems, showCart = true }) => {
   ) : null;
 };
 
-export default CartModal;
+const mapStateToProps = state => ({
+  cartItems: state.cart.items,
+  showCart: state.cart.showCart
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartModal);

@@ -5,8 +5,6 @@ import CartIcon from "./components/cart-icon";
 import CartModal from "./components/cart-modal";
 import Loader from "./components/loader";
 
-import characters from "./mock";
-
 function App() {
   return (
     <div className="container-fluid p-2 bg-light position-relative">
@@ -22,7 +20,7 @@ function App() {
         </div>
       </div>
 
-      <CharacterList characters={characters} />
+      <CharacterList />
       <CartModal />
       <Loader />
     </div>

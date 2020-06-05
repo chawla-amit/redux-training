@@ -1,6 +1,6 @@
 import React from "react";
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ character, addToCartItems }) => {
   const { name, status, species, gender, origin, location, image } = character;
   return (
     <div className="card bg-dark text-light">
@@ -42,6 +42,7 @@ const CharacterCard = ({ character }) => {
             fontSize: "20px",
             fontWeight: "bold"
           }}
+          onClick={() => addToCartItems(character)}
         >
           +
         </button>
